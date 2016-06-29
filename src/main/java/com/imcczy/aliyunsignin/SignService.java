@@ -43,9 +43,9 @@ public class SignService extends AccessibilityService {
         //找到签到按钮，并点击
 
         if ("com.alibaba.aliyun.biz.home.MainActivity".equals(classname)){
-            List<AccessibilityNodeInfo> list_1 = event.getSource().findAccessibilityNodeInfosByViewId("com.alibaba.aliyun:id/zhuanQu");
+            List<AccessibilityNodeInfo> list_1 = event.getSource().findAccessibilityNodeInfosByText("学生专区");
             if (!list_1.isEmpty()) {
-                list_1.get(0).performAction(AccessibilityNodeInfo.ACTION_CLICK);
+                list_1.get(0).getParent().performAction(AccessibilityNodeInfo.ACTION_CLICK);
             }
         }
         else if ("com.alibaba.aliyun.biz.products.student.StudentActivity".equals(classname)){
